@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
-import image_login from "../../assets/img/mapbox-icon.png";
+import user_marker from "../../assets/img/mapbox-icon.png";
+import event_marker from "../../assets/img/event.png";
 
 export const Wrapper = styled.div`
   width: 100%;
@@ -13,7 +14,16 @@ export const MapContainer = styled.div`
   height: 100%;
 
   .marker{
-    background-image: url(${image_login});
+    background-image: url(${user_marker});
+    background-size: cover;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
+  .markerEvent{
+    background-image: url(${event_marker});
     background-size: cover;
     width: 50px;
     height: 50px;
@@ -23,6 +33,7 @@ export const MapContainer = styled.div`
 
   .mapboxgl-popup {
     max-width: 200px;
+    background: #fff;
   }
 
   .mapboxgl-popup-content {
