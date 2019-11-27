@@ -1,6 +1,8 @@
-import styled from "styled-components";
+import styled from 'styled-components';
+import { darken } from 'polished';
+import { Button } from '@material-ui/core';
 
-import image_login from "../../../assets/img/1.jpg";
+import image_login from '../../../assets/img/1.jpg';
 
 export const Wrapper = styled.div`
   width: 100%;
@@ -50,71 +52,60 @@ export const Content = styled.div`
       -webkit-appearance: none;
     }
   }
+
+  form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60%;
+    height: 100%;
+  }
 `;
 
-export const LoginForm = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  width: 60%;
-  height: 100%;
-`;
-
-export const Form = styled.form`
-  width: 600px;
-  padding: 0px 100px;
-`;
-
-export const FormInput = styled.div`
+export const ContentForm = styled.div`
+  width: 50%;
   display: flex;
   flex-direction: column;
 
-  margin: 13px 0px;
-
-  input {
-    border-bottom: 1px solid #111;
-    border-top: 0px;
-    border-left: 0px;
-    border-right: 0px;
-    margin: 0;
-    padding: 0;
-    width: auto;
-    overflow: visible;
-    background: transparent;
-    color: inherit;
-    font: inherit;
-    line-height: normal;
-    -webkit-font-smoothing: inherit;
-    -moz-osx-font-smoothing: inherit;
-    -webkit-appearance: none;
+  /*CUSTOMIZAÇÃO DE INPUT*/
+  .MuiTextField-root {
+    margin-top: 25px;
+  }
+  .MuiInputBase-input {
+    padding: 6px 0 15px;
+  }
+  .MuiInputLabel-shrink {
+    font-size: 20px;
+  }
+  .MuiFormLabel-root.Mui-focused {
+    color: #11998e;
+  }
+  .MuiInput-underline:after {
+    border-color: #11998e;
   }
 
+  /*CURTOMIZAÇÃO DO LINK*/
   a {
+    margin-top: 30px;
     text-align: center;
-    padding: 10px;
-  }
-
-  button {
-    color: #fff;
-    padding: 10px;
-    width: 420px;
-    border-radius: 5px;
-    cursor: pointer;
-    background: #14988b;
-
-    /* css reset */
-    border: none;
-    margin: 0;
-    overflow: visible;
-    font: inherit;
-    line-height: normal;
-    -webkit-font-smoothing: inherit;
-    -moz-osx-font-smoothing: inherit;
-    -webkit-appearance: none;
+    text-decoration: none;
+    color: #3e3e3e;
   }
 `;
 
-export const SubmitButton = styled.div`
-  margin: 20px 0;
-  text-align: center;
+export const SubmitButton = styled(Button)`
+  margin-top: 15px !important;
+  color: #fff !important;
+  background: #11998e !important;
+  svg {
+    margin-right: 5px;
+  }
+  &:hover {
+    background: ${darken(0.02, '#11998e')} !important;
+  }
+
+  label {
+    font-size: 20px;
+    font-weight: 800;
+  }
 `;

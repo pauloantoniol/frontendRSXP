@@ -1,17 +1,15 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { Form } from '@rocketseat/unform';
 
-import {
-  Wrapper,
-  Content,
-  LoginForm,
-  Form,
-  FormInput,
-  SubmitButton,
-  FooterMenu
-} from "./styles";
+import { TextField } from '@material-ui/core';
+import { Wrapper, Content, ContentForm, SubmitButton } from './styles';
 
 export default function DefaultLayout() {
+  function handleSubmit(data) {
+    console.tron.log(data);
+  }
+
   return (
     <Wrapper>
       <Content>
@@ -19,31 +17,35 @@ export default function DefaultLayout() {
           <h1>Bem Vindo a seu Futuro!</h1>
 
           <p>
-            Encontre eventos incríveis nas melhores empresas de tecnologia.
-            Conheça mais da área que mais cresce no mundo, bons salários, ótimos
-            benefícios e tudo que você precisa é abrir sua mente, explore e
-            principalmente, divirta-se.
+            Aqui você encontra incríveis eventos nas melhores empresas, conhece
+            sua cultura, e forma de trabalho. E tudo que você precisa é abrir
+            sua mente, explore, deixe as tradições de lado e principalmente,
+            divirta-se.
           </p>
 
           <button>CADASTRE-SE</button>
         </div>
 
-        <LoginForm>
-          <Form onSubmit={() => {}}>
+        <Form onSubmit={handleSubmit}>
+          <ContentForm>
             <h1>Login</h1>
-            <FormInput>
-              <input type="email" placeholder="Email" onChange={e => {}} />
-            </FormInput>
-            <FormInput>
-              <input type="password" placeholder="Senha" onChange={e => {}} />
 
-              <Link to="/">Esqueceu sua senha?</Link>
-              <SubmitButton>
-                <button type="submit">Entrar</button>
-              </SubmitButton>
-            </FormInput>
-          </Form>
-        </LoginForm>
+            <TextField
+              type="email"
+              label="Email"
+              inputProps={{ name: 'email' }}
+            />
+            <TextField
+              type="password"
+              label="Senha"
+              inputProps={{ name: 'password' }}
+            />
+            <Link to="/">Esqueceu sua senha?</Link>
+            <SubmitButton type="submit" onClick={() => {}}>
+              <label> ENTRAR </label>
+            </SubmitButton>
+          </ContentForm>
+        </Form>
       </Content>
     </Wrapper>
   );
