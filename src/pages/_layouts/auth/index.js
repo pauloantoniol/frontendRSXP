@@ -1,13 +1,14 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect  } from 'react-router-dom';
 import { Form } from '@rocketseat/unform';
+import history from '../../../services/history'
 
 import { TextField } from '@material-ui/core';
 import { Wrapper, Content, ContentForm, SubmitButton } from './styles';
 
 export default function DefaultLayout() {
   function handleSubmit(data) {
-    console.tron.log(data);
+    history.push('/mapa?signed=true');
   }
 
   return (

@@ -10,7 +10,7 @@ export default function RouteWrapper({
   isPrivate,
   ...rest
 }) {
-  const signed = false;
+  const signed = (rest.location.search.split('=')[1] == 'true' ? true : false);
   if (!signed && isPrivate) {
     return <Redirect to="/" />;
   }
